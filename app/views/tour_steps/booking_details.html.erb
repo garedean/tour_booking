@@ -1,0 +1,21 @@
+<%= simple_form_for @tour, url: wizard_path do |f| %>
+  <%= f.hidden_field :tour_complete, value: "true" %>
+
+  <%= f.input :booking_date, :collection => [
+    "Saturday, October 10",
+    "Sunday, October 11, 2015",
+    "Saturday, October 17, 2015",
+    "Sunday, October 18, 2015",
+    "Saturday, October 24, 2015",
+    "Sunday, October 25, 2015"] %>
+
+  <%= f.input :referrer, label: "How did you hear about us?" %>
+
+  <%= f.input :special_requests, label: "Please write any special requests for your tour" %>
+
+  <%= f.association :amenities %>
+
+  <%= f.button :submit, "Book Tour" %>
+<% end %>
+
+<%= link_to "< Back", previous_wizard_path, class: "back-link" %>

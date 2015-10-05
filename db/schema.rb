@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151005190131) do
+ActiveRecord::Schema.define(version: 20151005195129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "amenities", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "amenities_tours", force: :cascade do |t|
+    t.integer "amenity_id"
+    t.integer "tour_id"
+  end
+
+  add_index "amenities_tours", ["amenity_id"], name: "index_amenities_tours_on_amenity_id", using: :btree
+  add_index "amenities_tours", ["tour_id"], name: "index_amenities_tours_on_tour_id", using: :btree
 
   create_table "tour_types", force: :cascade do |t|
     t.string "name"
@@ -29,9 +41,12 @@ ActiveRecord::Schema.define(version: 20151005190131) do
     t.string  "booking_date"
     t.string  "referrer"
     t.string  "status"
+    t.string  "special_requests"
   end
 
   add_index "tours", ["tour_type_id"], name: "index_tours_on_tour_type_id", using: :btree
 
+  add_foreign_key "amenities_tours", "amenities"
+  add_foreign_key "amenities_tours", "tours"
   add_foreign_key "tours", "tour_types"
 end
