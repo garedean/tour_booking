@@ -1,0 +1,12 @@
+Your tour:
+
+<%= render "shared/tour_details" %>
+
+<% unless @tour.rating %>
+  <p>Please rate your tour experience:</p>
+
+  <%= simple_form_for @tour do |f| %>
+    <%= f.input :rating, collection: 1..5 %>
+    <%= f.button :submit %>
+  <% end %>
+<% end %>

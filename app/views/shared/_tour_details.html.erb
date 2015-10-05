@@ -1,0 +1,26 @@
+<ul>
+  <li>
+    Tour: <%= @tour.tour_type.name %>
+  </li>
+  <li>
+    Booking Date: <%= @tour.booking_date %>
+  </li>
+  <li>
+    Booked for: <%= @tour.customer_full_name %>
+  </li>
+  <li>
+    Contact Phone: <%= @tour.requester_phone_number %>
+  </li>
+  <li>
+    Contact Email: <%= @tour.requester_email %>
+  </li>
+  <li>
+    Referred By: <%= @tour.referrer %>
+  </li>
+  <li>
+    Special Requests: <%= @tour.special_requests %>
+  </li>
+  <li>
+    Amenities: <%= @tour.amenities_list %>
+  </li>
+</ul>
