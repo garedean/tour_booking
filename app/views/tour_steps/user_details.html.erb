@@ -1,0 +1,6 @@
+<%= simple_form_for @tour, url: wizard_path do |f| %>
+  <%= f.input :requester_first_name %>
+  <%= f.input :requester_last_name %>
+  <%= f.input :requester_phone_number%>
+  <%= f.button :submit, "Next" %>
+<% end %>
