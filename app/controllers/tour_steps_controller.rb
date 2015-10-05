@@ -7,6 +7,16 @@ class TourStepsController < ApplicationController
     render_wizard
   end
 
+  def update
+    @tour = get_tour
+    final_params = tour_step_params.merge!(status: step.to_s)
+    final_params = tour_step_params.merge!(status: 'booked', ip_address: request.remote_ip) if step == steps.last
+
+    @tour.attributes = final_params
+
+    render_wizard @tour
+  end
+
   private
 
   def tour_step_params
