@@ -1,0 +1,5 @@
+<%= simple_form_for @tour do |f| %>
+  <%= f.input :tour_type, collection: TourType.all, label_method: :name, value_method: :id, label: "Tour", required: false %>
+  <%= f.input :requester_email, required: false %>
+  <%= f.button :submit, "Request Tour" %>
+<% end %>
