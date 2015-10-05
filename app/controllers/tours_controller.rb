@@ -11,7 +11,7 @@ class ToursController < ApplicationController
     if @tour.save
       UserMailer.activation_email(@tour).deliver
 
-      redirect_to :back, notice: "Please check your email to finish booking your tour."
+      redirect_to root_path, notice: "Please check your email to finish booking your tour."
     else
       render :new
     end
