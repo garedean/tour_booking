@@ -1,28 +1,10 @@
-== README
+== SETUP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Navigate to the project's root directory
+2. Terminal: rake db:create
+3. Terminal: rake db:migrate
+4. Terminal: rake db:seed
+5. Terminal: rails server
+6. Navigate to http://localhost:3000/ to begin
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Note: sending emails should work without any configuration. For convenience, I left SMTP credentials of a test gmail account hard coded in development.rb.
