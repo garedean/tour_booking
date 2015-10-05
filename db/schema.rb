@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151005195129) do
+ActiveRecord::Schema.define(version: 20151005200259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20151005195129) do
     t.string  "referrer"
     t.string  "status"
     t.string  "special_requests"
+    t.string  "ip_address"
   end
 
   add_index "tours", ["tour_type_id"], name: "index_tours_on_tour_type_id", using: :btree
